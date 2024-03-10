@@ -1,0 +1,80 @@
+
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}  */
+
+
+
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* .header{
+  background-color: #bae581;
+  color: white;
+  height:70px;
+  width:100%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* footer{
+  position: absolute;
+  bottom: 0;
+  background-color: #333436;
+  height:60px;
+  width:100%;
+  color: azure; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}  */
+
+/* .note{
+  border-radius: 20px;
+  margin: 30px 0 0 20px;
+  width: 180px;
+  height: 70px;
+  border: none;
+  outline: none;
+  box-shadow: 5px 5px 5px grey;
+
+} */
+
+/* div p{
+text-align: left;
+} */
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* .top{
+  background-color: red;
+} */
+
+/* .bottom{
+  background-color: antiquewhite;
+} */
+
+/* img{
+  height: 250px;
+  width: 300px;
+} */
+
+
