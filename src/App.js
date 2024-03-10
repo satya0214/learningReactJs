@@ -5,6 +5,20 @@ import './App.css';
 // import Footer from './components/Footer';
 // import Note from './components/Note';
  import Card from './components/Card';
+ import Contact from './components/Contact';
+
+function createCard(Contact){
+  return(
+    <Card 
+    key ={Contact.id}
+    name = {Contact.name}
+    img ={Contact.imgURL}
+    phone ={Contact.phone}
+    email={Contact.email}
+    />
+  )
+}
+
 function App() {
   return (
     <div>
@@ -15,22 +29,9 @@ function App() {
       <Card /> */}
     {/* <Note /> */}
    
-    <Card 
-    //  name ="XYZ"
-     img = "https://sample-videos.com/img/Sample-png-image-100kb.png" 
-     alt='xyz'
-     email ='abc123@gmail.com'
-     phone ='+91098765432'
+    <h1 className="heading">My Contacts</h1>
+    {Contact.map(createCard)}
 
-
-     />
-        <Card 
-    //  name ="ABCx"
-     img = "https://www.fnordware.com/superpng/pnggrad16rgb.png" 
-     alt='pnggrad16rgb'
-     email ='abc123@gmail.com'
-     phone ='+91098765432'
-     />
     </div>
   );
 }

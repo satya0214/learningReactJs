@@ -1,16 +1,16 @@
-
+import Avatar from './Avatar';
 function Card(props){
       
-    const {alt, name, img , phone ,email} = props
+    const { img ,name , phone ,email} = props
     return (
        <div className="card">
         <div className="top">
-            <h1>{name+'dfgdgdgs'}</h1>
-            {/* <img src={img} alt={alt}/> */}
+            <h1 className="name">{name}</h1>
+            <Avatar img={img}/>
         </div>
         <div className="bottom">
-            <p>{phone+'dfgdgdg'}</p>
-            <p>{email}</p>
+            <p className="info">{phone+'dfgdgdg'}</p>
+            <p className="info">{email}</p>
         </div>
        </div>
         
