@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `Sets of git commit.
+
+step 1 git status
+step 2 git add src/ {to add the file which are inside the src} ,{if we do 'git add .' it will add all the file}
+step 3 git commit -m "write some message hrer"
+step 4 git push origin main
