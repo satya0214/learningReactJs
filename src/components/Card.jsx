@@ -19,8 +19,3 @@ function Card(props){
 
 export default Card;
 
-
- // <>
-        // <h1>{name}</h1>
-        // <img src={img} alt={alt} />
-        // </>
