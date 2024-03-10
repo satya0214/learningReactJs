@@ -5,11 +5,11 @@ function Card(props){
     return (
        <div className="card">
         <div className="top">
-            <h1>{name}</h1>
+            <h1>{name+'dfgdgdgs'}</h1>
             {/* <img src={img} alt={alt}/> */}
         </div>
         <div className="bottom">
-            <p>{phone}</p>
+            <p>{phone+'dfgdgdg'}</p>
             <p>{email}</p>
         </div>
        </div>
