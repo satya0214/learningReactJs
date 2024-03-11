@@ -17,8 +17,11 @@
     transform: rotate(360deg);
   }
 } */
+html {
+  font-family: "Montserrat", sans-serif;
+}
 
-/* .header{
+.header{
   background-color: #bae581;
   color: white;
   height:70px;
@@ -27,9 +30,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
-/* footer{
+footer{
   position: absolute;
   bottom: 0;
   background-color: #333436;
@@ -40,22 +43,34 @@
   justify-content: center;
   align-items: center;
  
-}  */
+} 
 
-/* .note{
-  border-radius: 20px;
-  margin: 30px 0 0 20px;
-  width: 180px;
-  height: 70px;
-  border: none;
-  outline: none;
-  box-shadow: 5px 5px 5px grey;
+.note{
 
-} */
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
 
-/* div p{
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+div p{
 text-align: left;
-} */
+}
 
 
 /* body{
@@ -131,19 +146,13 @@ img {
   color: #1a7e76;
 } */
 
-body{
+/* body{
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.666;
   background: #c0d2d4;
   color: #555;
 }
-
-/* .heading{
-  background-color:#2ec2b0;;
-} */
-
-
 
 h1 {
   font-weight: 900;
@@ -224,4 +233,4 @@ dd dl .term {
 
 .meaning > .term > dt {
   margin-bottom: 1rem;
-}
+} */

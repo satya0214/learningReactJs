@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 // import Heading from './Heading';
-// import Header from './components/Header';
-// import Footer from './components/Footer';
-// import Note from './components/Note';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Note from './components/Note';
+import Node from './constants/Constants';
 //  import Card from './components/Card';
 //  import Contact from './components/Contact';
-import Entry from './components/Entry';
-import emojiPedia from './components/emojiPedia';
+// import Entry from './components/Entry';
+// import emojiPedia from './components/emojiPedia';
 
  
 // function createCard(Contact){
@@ -22,35 +23,47 @@ import emojiPedia from './components/emojiPedia';
 //   )
 // }
 
-function createEmoji(emojiPedia){
-  return(
-    <Entry 
-    key={emojiPedia.id}
-    emoji = {emojiPedia.emoji}
-    name={emojiPedia.name}
-    meaning = {emojiPedia.meaning}
-    />
+// function createEmoji(emojiPedia){
+//   return(
+//     <Entry 
+//     key={emojiPedia.id}
+//     emoji = {emojiPedia.emoji}
+//     name={emojiPedia.name}
+//     meaning = {emojiPedia.meaning}
+//     />
+//   )
+// }
+
+function Createnode(node){
+  return (
+    <Note 
+  key = {node.key}
+  title={node.title}
+  content = {node.content}
+  />
   )
 }
+
 
 function App() {
   return (
     <div>
       {/* <Heading /> */}
-      {/* <Header />
-      <Note />
+      <Header />
+      {Node.map(Createnode)}
       <Footer />
-      <Card /> */}
-    {/* <Note /> */}
+
+
+      {/* <Card /> */}
    
     {/* <h1 className="heading">My Contacts</h1>
     {Contact.map(createCard)} */}
     {/* <h1 className="heading">emojipedia</h1>
     {emojiPedia.map(createEmoji)} */}
-<h1>
+      {/* <h1>
         <span className='heading'>emojiPedia</span>
       </h1>
-      <dl className="meaning">{emojiPedia.map(createEmoji)}</dl>
+      <dl className="meaning">{emojiPedia.map(createEmoji)}</dl> */}
     </div>
   );
 }
