@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login';
+
+
 // import Heading from './Heading';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Note from './components/Note';
-import Node from './constants/Constants';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
+// import Note from './components/Note';
+// import Node from './constants/Constants';
 //  import Card from './components/Card';
 //  import Contact from './components/Contact';
 // import Entry from './components/Entry';
@@ -34,24 +37,26 @@ import Node from './constants/Constants';
 //   )
 // }
 
-function Createnode(node){
-  return (
-    <Note 
-  key = {node.key}
-  title={node.title}
-  content = {node.content}
-  />
-  )
-}
+// function Createnode(node){
+//   return (
+//     <Note 
+//   key = {node.key}
+//   title={node.title}
+//   content = {node.content}
+//   />
+//   )
+// }
+
+var userIsRegistered = false;
 
 
 function App() {
   return (
     <div>
       {/* <Heading /> */}
-      <Header />
+      {/* <Header />
       {Node.map(Createnode)}
-      <Footer />
+      <Footer /> */}
 
 
       {/* <Card /> */}
@@ -64,7 +69,9 @@ function App() {
         <span className='heading'>emojiPedia</span>
       </h1>
       <dl className="meaning">{emojiPedia.map(createEmoji)}</dl> */}
-    </div>
+      <Login isRegistered={userIsRegistered}/>
+      
+       </div>
   );
 }
 
