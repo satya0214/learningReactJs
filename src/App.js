@@ -53,21 +53,34 @@ import { useState } from 'react';
 
 
 function App() {
-  // let timer;
-  //  setInterval(increases , 4000)
   const [count , setCount] = useState(0);
   const [timer , setTimer] = useState();
-     
+  const [buttonText, setButtonText] = useState('Start'); 
+
       function decreases(){
         setCount(0);
         clearInterval(timer)
       }
+      
       const startTimer = () => {
         const timer =  setInterval(() => {
           setCount((pre) => pre+1);
         },500)
         setTimer( timer )
+        
       }
+      const start = () => {
+        setButtonText((prev) => prev === "Reset" ? 'Start' : 'Reset');
+    if(buttonText==="Reset"){
+            decreases();
+          } else {
+            startTimer();
+          }
+      }
+      
+
+      
+
   return (
     <div>
       {/* <Heading /> */}
@@ -91,8 +104,9 @@ function App() {
       
       <div className='container'>
         <h1>{count}</h1>
-      <button onClick={startTimer}>Start</button>
-      <button onClick={decreases}>Reset</button>
+      <button onClick={start} >
+      {buttonText}
+      </button>
       </div>
       
        </div>
