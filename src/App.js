@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import  {useState}  from 'react';
 // import Login from './components/Login';
 
 
@@ -53,36 +53,33 @@ import { useState } from 'react';
 
 
 function App() {
-  const [count , setCount] = useState(0);
-  const [timer , setTimer] = useState();
-  const [buttonText, setButtonText] = useState('Start'); 
+  const [fname , setfName] = useState();
+  const [lname , setlName] = useState();
+  function Handlechange(event) {
+    console.log(event.target.value)
+    setfName(event.target.value)
+  }
 
-      function decreases(){
-        setCount(0);
-        clearInterval(timer)
-      }
-      
-      const startTimer = () => {
-        const timer =  setInterval(() => {
-          setCount((pre) => pre+1);
-        },500)
-        setTimer( timer )
-        
-      }
-      const start = () => {
-        setButtonText((prev) => prev === "Reset" ? 'Start' : 'Reset');
-    if(buttonText==="Reset"){
-            decreases();
-          } else {
-            startTimer();
-          }
-      }
-      
-
-      
-
+  function Handlechange1(event) {
+    console.log(event.target.value)
+    setlName(event.target.value)
+  }
   return (
-    <div>
+    <div className="container">
+
+
+      <h1>Hello {fname} {lname}</h1>
+      <input 
+      onChange={Handlechange}
+      type="text" placeholder="Enter your Firstname?" />
+      <input 
+      onChange={Handlechange1}
+      type="text" placeholder="Enter your Lastname?" />
+      <button >Submit</button>
+    
+
+
+
       {/* <Heading /> */}
       {/* <Header />
       {Node.map(Createnode)}
@@ -102,12 +99,7 @@ function App() {
 
       {/* <Login isRegistered={userIsRegistered}/> */}
       
-      <div className='container'>
-        <h1>{count}</h1>
-      <button onClick={start} >
-      {buttonText}
-      </button>
-      </div>
+     
       
        </div>
   );
