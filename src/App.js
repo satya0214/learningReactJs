@@ -53,29 +53,53 @@ import  {useState}  from 'react';
 
 
 function App() {
-  const [fname , setfName] = useState();
-  const [lname , setlName] = useState();
-  function Handlechange(event) {
-    console.log(event.target.value)
-    setfName(event.target.value)
+  const [fullName , setfullName] = useState({
+    fName : "",
+    lName : "",
+    email : ""
+  });
+  //For understanding of ES6 Spread operator ..
+// const fruit = ['apple','orange','mango'];
+// const vegitable = ['potato' , 'tomato','ladyFinger',...fruit];
+// console.log(vegitable)
+  function Handlechange(event){
+    const newValue = event.target.value;
+    const inputName = event.target.name;
+    setfullName(prevValue =>{
+      return{
+        ...prevValue,
+        [inputName]:newValue
+      }
+    })
   }
 
-  function Handlechange1(event) {
-    console.log(event.target.value)
-    setlName(event.target.value)
-  }
+
   return (
     <div className="container">
-
-
-      <h1>Hello {fname} {lname}</h1>
+      <h1>Hello {fullName.fName} {fullName.lName}</h1>
+      <p>{fullName.email}</p>
       <input 
       onChange={Handlechange}
-      type="text" placeholder="Enter your Firstname?" />
+      name='fName'
+      type="text" 
+      placeholder="Enter your Firstname?" 
+      value={fullName.fName} 
+      />
       <input 
-      onChange={Handlechange1}
-      type="text" placeholder="Enter your Lastname?" />
-      <button >Submit</button>
+      name='lName'
+      onChange={Handlechange}
+      type="text"
+       placeholder="Enter your Lastname?" 
+       value={fullName.lName}
+       />
+       <input 
+      name='email'
+      onChange={Handlechange}
+      type="text"
+       placeholder="Enter your EmailId?" 
+       value={fullName.email}
+       />
+      <button>Submit</button>
     
 
 
