@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import  {useState}  from 'react';
+import ToDoItems from './components/ToDoItems';
 // import Login from './components/Login';
 
 
@@ -53,53 +54,64 @@ import  {useState}  from 'react';
 
 
 function App() {
-  const [fullName , setfullName] = useState({
-    fName : "",
-    lName : "",
-    email : ""
-  });
-  //For understanding of ES6 Spread operator ..
-// const fruit = ['apple','orange','mango'];
-// const vegitable = ['potato' , 'tomato','ladyFinger',...fruit];
-// console.log(vegitable)
-  function Handlechange(event){
-    const newValue = event.target.value;
-    const inputName = event.target.name;
-    setfullName(prevValue =>{
-      return{
-        ...prevValue,
-        [inputName]:newValue
-      }
+  const [inputText , setinputText] = useState("");
+  // const [isDisable , setIsDisable] = useState(true);
+  const [items , setItems] = useState([]);
+  
+   function Handelchange(event){
+   
+       const newValue = event.target.value;
+       
+       setinputText(newValue)
+       
+   }
+
+   function addItems(){
+    setItems(prevValue =>{
+      return[ inputText,...prevValue,]
+      
+      })
+
+     setinputText("")
+   
+   }
+
+   function deleteItems(id){
+    setItems(prevValue =>{
+       return prevValue.filter((items , indexes) =>{
+        return indexes !==id;
+       })
     })
-  }
+   }
 
-
+   
   return (
     <div className="container">
-      <h1>Hello {fullName.fName} {fullName.lName}</h1>
-      <p>{fullName.email}</p>
-      <input 
-      onChange={Handlechange}
-      name='fName'
-      type="text" 
-      placeholder="Enter your Firstname?" 
-      value={fullName.fName} 
-      />
-      <input 
-      name='lName'
-      onChange={Handlechange}
-      type="text"
-       placeholder="Enter your Lastname?" 
-       value={fullName.lName}
-       />
-       <input 
-      name='email'
-      onChange={Handlechange}
-      type="text"
-       placeholder="Enter your EmailId?" 
-       value={fullName.email}
-       />
-      <button>Submit</button>
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={Handelchange} type="text" value={inputText}/>
+        <button
+        //disabled={isDisable}
+        onClick={addItems}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        
+        <ul>
+          {items.map((todoItem , indexes) =>
+          <ToDoItems 
+          text = {todoItem}
+          onChecked = {deleteItems}
+          key = {indexes}
+          id = {indexes}
+          />
+          )}
+          
+        </ul>
+      </div>
     
 
 
